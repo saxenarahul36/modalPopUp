@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "target": "es6"
+    },
+    "files": [
+        "typings/index.d.ts",
+        "src/routes.ts",
+        "src/main.ts",
+        "src/department.service/department.service.ts",
+        "src/department.controller/department.controller.ts",
+        "src/home.controller/home.controller.ts",
+        "src/employee.modal.controller/employee.modal.controller.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "typings"
+    ]
+}
