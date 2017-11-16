@@ -1,0 +1,88 @@
+        
+<nav class="col-sm-4 ">
+    
+
+     <h3>Add New Column in User Table</h3>
+<div class="form-group">
+   
+ <label > Column Name :</label>
+ <input type="text" class="form-control" [(ngModel)]="column.name"  placeholder="Enter Column Name">
+ 
+</div>
+<div class="form-group">
+ <label >Column type :</label>
+ <select class="form-control"  [(ngModel)]="column.type.type" (change)="onChange($event)">
+   <option value="STRING">STRING</option>
+<option value="NUMBER">NUMBER</option>
+<option value="BOOLEAN">BOOLEAN</option>
+ </select>
+</div>
+<div class="form-check">
+ <label class="form-check-label">
+  Required :<input type="checkbox" [(ngModel)]="column.type.Required"  class="form-check-input">
+   Check me out
+ </label>
+</div>
+<div class="form-group">
+ <label > Default Value :</label>
+ <input type="text" class="form-control" [(ngModel)]="column.type.defaultValue"  placeholder="Enter Column Name">
+ 
+</div>
+<div class="form-group" *ngIf="isNumField" >
+ <label > Min Value :</label>
+ <input type="text" class="form-control" [(ngModel)]="column.type.min"  >
+ 
+</div>
+<div class="form-group" *ngIf="isNumField" >
+ <label > Max Value :</label>
+ <input type="text" class="form-control" [(ngModel)]="column.type.max"  >
+ 
+</div>
+<div class="form-group" *ngIf="isstringField" >
+ <label > Minimum Length :</label>
+ <input type="text" class="form-control" [(ngModel)]="column.type.minLength" >
+ 
+</div>
+<div class="form-group" *ngIf="isstringField">
+ <label > Minimum Length :</label>
+ <input type="text" class="form-control" [(ngModel)]="column.type.maxLength" >
+ 
+</div>
+<button type="button" class="btn btn-primary" (click)="addnewColumn()">Add New Column</button>
+   
+     </nav>
+     
+<main class="col-sm-8 ">
+
+
+         <input type="text" class="form-control" [(ngModel)]="searchvalue"   placeholder="Enter User Name">
+         <br>
+         <button class="btn btn-primary" type="button" (click)="serahItem()">Search</button>
+         <button class="btn btn-primary" type="button" (click)="clearsearch()">Clear Search</button>
+        
+
+    
+<div class="table-responsive">
+ <table class="table table-striped">
+     <thead>
+         <tr>
+             <th *ngFor="let user1 of arrayOfKeys">  {{user1}}
+                 <a href="#" class="btn btn-danger btn-xs a-btn-slide-text"  (click)="editColumn(user1)" >
+                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                     <span><strong>Edit</strong></span>            
+                 </a>     <button (click)="deleteColumn(user1)"class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>    </th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let user of userList ">
+             <td *ngFor="let key of arrayOfKeys">
+                 {{getKyesArra(key,user)}}</td>
+         </tr>
+     </tbody>
+ </table>
+</div>      
+</main>
+
+
+
+

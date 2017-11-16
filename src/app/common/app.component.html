@@ -1,0 +1,34 @@
+<div class="app" >
+	{{$ctrl.title}} 
+	{{$ctrl.runTest}}
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th> id
+
+
+				</th>
+				<th> name
+					
+									 </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-ng-repeat="data in runTest">
+				<td >
+					{{data.name}}</td>
+					<td >
+						{{data.id}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+
+
+
+	<!--Side nav, hear, footer goes here-->
+	<div ui-view></div>
+</div>
